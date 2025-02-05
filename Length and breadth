@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class RectangleTriangleCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Choose a shape:");
+        System.out.println("1. Rectangle");
+        System.out.println("2. Triangle");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                calculateRectangleProperties(scanner);
+                break;
+            case 2:
+                calculateTriangleProperties(scanner);
+                break;
+            default:
+                System.out.println("Invalid choice!");
+        }
+
+        scanner.close();
+    }
+
+    private static void calculateRectangleProperties(Scanner scanner) {
+        System.out.print("Enter length: ");
+        double length = scanner.nextDouble();
+        System.out.print("Enter breadth: ");
+        double breadth = scanner.nextDouble();
+
+        double area = length * breadth;
+        double perimeter = 2 * (length + breadth);
+
+        System.out.println("Rectangle Properties:");
+        System.out.println("Length: " + length);
+        System.out.println("Breadth: " + breadth);
+        System.out.println("Area: " + area);
+        System.out.println("Perimeter: " + perimeter);
+    }
+
+    private static void calculateTriangleProperties(Scanner scanner) {
+        System.out.print("Enter base: ");
+        double base = scanner.nextDouble();
+        System.out.print("Enter height: ");
+        double height = scanner.nextDouble();
+
+        double area = 0.5 * base * height;
+
+        System.out.println("Triangle Properties:");
+        System.out.println("Base: " + base);
+        System.out.println("Height: " + height);
+        System.out.println("Area: " + area);
+    }
+}
